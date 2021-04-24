@@ -1,0 +1,21 @@
+$headerHeight: 80px;
+$headerImgSize: 30px;
+
+$blue: rgb(5, 10, 230);
+$bluePurple: rgb(88, 81, 216);
+$purple: rgb(131, 58, 180);
+$pink: rgb(225, 48, 108);
+$white: rgb(255, 255, 255);
+
+$gray: rgb(118, 118, 118);
+$lightGray: rgb(225, 225, 225);
+$veryLightGray: rgb(239, 239, 239);
+
+$pacifico: "Pacifico", cursive;
+$ubuntu: "Ubuntu", sans-serif;
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

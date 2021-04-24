@@ -1,3 +1,96 @@
+.Header {
+  display: flex;
+  gap: 20px;
+  height: 80px;
+  padding: 15px 25px;
+  background-color: white;
+}
+.Header .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px;
+  border-radius: 50%;
+}
+.Header .logo-container:hover {
+  background-color: #efefef;
+}
+.Header .logo-container .logo {
+  width: 30px;
+  height: 30px;
+}
+.Header .search-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 100%;
+  height: 100%;
+}
+.Header .search-box-container .search-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #efefef;
+  border-radius: 2em;
+}
+.Header .search-box-container .search-box:hover {
+  background-color: #e1e1e1;
+}
+.Header .search-box-container .search-box .search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+}
+.Header .search-box-container .search-box .search-button .search-icon {
+  width: 15px;
+  height: 15px;
+  filter: invert(52%) sepia(2%) saturate(15%) hue-rotate(318deg) brightness(87%) contrast(81%);
+}
+.Header .search-box-container .search-box .search-input {
+  flex: 1 1 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  background: none;
+  border: none;
+  outline: none;
+}
+.Header .user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 10px;
+  border-radius: 50%;
+}
+.Header .user-container:hover {
+  background-color: #efefef;
+}
+.Header .user-container .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #5851d8;
+  border-radius: 50%;
+}
+.Header .user-container .user .user-icon {
+  width: 60%;
+  height: 60%;
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(341deg) brightness(106%) contrast(101%);
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*# sourceMappingURL=App.css.map */

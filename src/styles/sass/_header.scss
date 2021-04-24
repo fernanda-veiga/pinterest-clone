@@ -1,0 +1,109 @@
+@use 'vars';
+
+.Header {
+  display: flex;
+  gap: 20px;
+  height: vars.$headerHeight;
+  padding: 15px 25px;
+
+  background-color: vars.$white;
+
+  .logo-container {
+    @include vars.flexCenter;
+
+    height: 100%;
+    padding: 10px;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: vars.$veryLightGray;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .search-box-container {
+    @include vars.flexCenter;
+
+    flex: 1 1 100%;
+    height: 100%;
+
+    .search-box {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+
+      background-color: vars.$veryLightGray;
+      border-radius: 2em;
+
+      &:hover {
+        background-color: vars.$lightGray;
+      }
+
+      .search-button {
+        @include vars.flexCenter;
+
+        width: 30px;
+        height: 30px;
+
+        background: none;
+        border: none;
+        outline: none;
+
+        .search-icon {
+          width: 15px;
+          height: 15px;
+
+          filter: invert(52%) sepia(2%) saturate(15%) hue-rotate(318deg)
+            brightness(87%) contrast(81%);
+        }
+      }
+
+      .search-input {
+        flex: 1 1 100%;
+
+        font-family: vars.$ubuntu;
+        font-size: 16px;
+
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .user-container {
+    @include vars.flexCenter;
+
+    height: 100%;
+    padding: 10px;
+
+    border-radius: 50%;
+
+    &:hover {
+      background-color: vars.$veryLightGray;
+    }
+
+    .user {
+      @include vars.flexCenter;
+
+      width: 30px;
+      height: 30px;
+
+      background-color: vars.$bluePurple;
+      border-radius: 50%;
+
+      .user-icon {
+        width: 60%;
+        height: 60%;
+
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(341deg)
+          brightness(106%) contrast(101%);
+      }
+    }
+  }
+}
