@@ -1,6 +1,7 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from "./Header";
+import Search from "./Search";
 import "../styles/App.css";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
         <Header />
         <Switch>
           {/*<Route exact path="/" component={Homepage} />*/}
-          {/*<Route exact path="/search" component={Search} />*/}
+          <Route exact path="/search" component={Search} />
           {/*<Route exact path="/user" component={User} />*/}
         </Switch>
       </div>
