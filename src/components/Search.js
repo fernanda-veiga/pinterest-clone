@@ -13,11 +13,10 @@ function Search() {
 
       //Fetch images urls
       const fetchedData = await fetch(
-        `https://api.unsplash.com/search/photos?client_id=${APIKey}&query=cat`,
+        `https://api.unsplash.com/search/photos?client_id=${APIKey}&per_page=20&query=cat`,
         { mode: "cors" }
       );
       const fecthedDataJSON = await fetchedData.json();
-      console.log(fecthedDataJSON);
       setImages(
         fecthedDataJSON.results.map((img) => {
           return { key: img.id, url: img.urls.regular };
@@ -32,9 +31,18 @@ function Search() {
       {images === undefined ? (
         <Loader />
       ) : (
-        images.map((img) => {
-          return <img key={img.key} src={img.url} />;
-        })
+        <div className="Search-image-container">
+          {images.map((img) => {
+            return (
+              <img
+                key={img.key}
+                className="Search-image"
+                src={img.url}
+                alt=""
+              />
+            );
+          })}
+        </div>
       )}
     </div>
   );
