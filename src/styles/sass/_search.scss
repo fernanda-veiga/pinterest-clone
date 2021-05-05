@@ -1,0 +1,27 @@
+@use 'vars';
+
+.Search {
+  @include vars.flexCenter;
+
+  .Search-image-container {
+    width: min-content;
+    padding: vars.$searchImageGap;
+    padding-bottom: 0px;
+    column-count: 1;
+    column-gap: vars.$searchImageGap;
+
+    @for $i from 2 through 6 {
+      @media (min-width: calc(#{vars.$searchImageWidth} * #{$i} + #{vars.$searchImageGap} * (#{$i} + 1))) {
+        column-count: $i;
+      }
+    }
+
+    .Search-image {
+      width: vars.$searchImageWidth;
+      height: auto;
+      margin-bottom: vars.$searchImageGap;
+
+      border-radius: 15px;
+    }
+  }
+}
