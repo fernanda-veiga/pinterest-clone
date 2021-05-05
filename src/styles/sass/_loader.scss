@@ -1,0 +1,51 @@
+@use 'vars';
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+
+  .loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: vars.$bluePurple;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+
+    .loader-circle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: vars.$white;
+
+      &:nth-child(1) {
+        top: 30%;
+        left: 30%;
+      }
+      &:nth-child(2) {
+        top: 30%;
+        right: 30%;
+      }
+      &:nth-child(3) {
+        bottom: 30%;
+        left: 30%;
+      }
+      &:nth-child(4) {
+        bottom: 30%;
+        right: 30%;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

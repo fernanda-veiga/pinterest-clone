@@ -87,6 +87,52 @@
   filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(341deg) brightness(106%) contrast(101%);
 }
 
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+.loader-container .loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: #5851d8;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+.loader-container .loader .loader-circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+.loader-container .loader .loader-circle:nth-child(1) {
+  top: 30%;
+  left: 30%;
+}
+.loader-container .loader .loader-circle:nth-child(2) {
+  top: 30%;
+  right: 30%;
+}
+.loader-container .loader .loader-circle:nth-child(3) {
+  bottom: 30%;
+  left: 30%;
+}
+.loader-container .loader .loader-circle:nth-child(4) {
+  bottom: 30%;
+  right: 30%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
