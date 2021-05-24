@@ -11,14 +11,21 @@ function Logo() {
   );
 }
 
-function SearchBox() {
+function SearchBox(props) {
   return (
     <div className="search-box-container">
       <label className="search-box">
         <button className="search-button">
           <img className="search-icon" src={search} alt="" />
         </button>
-        <input className="search-input" type="text" placeholder="Search" />
+        <input
+          onChange={(event) => {
+            props.setSearchTerm(event.target.value);
+          }}
+          className="search-input"
+          type="text"
+          placeholder="Search"
+        />
       </label>
     </div>
   );
@@ -34,11 +41,11 @@ function User() {
   );
 }
 
-function Header() {
+function Header(props) {
   return (
     <header className="Header">
       <Logo />
-      <SearchBox />
+      <SearchBox setSearchTerm={props.setSearchTerm} />
       <User />
     </header>
   );

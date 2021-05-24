@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import APIKeyPath from "../firebase";
 import Loader from "./Loader";
 
-function Search() {
+function Search(props) {
+  console.log(props.searchTerm);
   const [images, setImages] = useState(undefined);
 
   useEffect(() => {
