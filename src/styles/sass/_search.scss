@@ -24,4 +24,25 @@
       border-radius: 15px;
     }
   }
+
+  .Search-error {
+    @include vars.flexCenterColumn;
+
+    gap: vars.$searchImageGap;
+    padding: vars.$searchImageGap;
+
+    img {
+      width: 100px;
+      height: auto;
+
+      filter: invert(52%) sepia(2%) saturate(15%) hue-rotate(318deg)
+        brightness(87%) contrast(81%);
+    }
+
+    p {
+      font-family: vars.$ubuntu;
+      font-size: 20px;
+      color: vars.$gray;
+    }
+  }
 }

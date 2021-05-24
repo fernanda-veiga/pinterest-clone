@@ -21,3 +21,10 @@ $ubuntu: "Ubuntu", sans-serif;
   align-items: center;
   justify-content: center;
 }
+
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

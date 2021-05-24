@@ -10,9 +10,11 @@ function App() {
 
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   async function fetchImages(term) {
     setLoading(true);
+    setError(false);
 
     //Fetch API key
     const doc = await APIKeyPath.get();
@@ -24,11 +26,17 @@ function App() {
       { mode: "cors" }
     );
     const fecthedDataJSON = await fetchedData.json();
-    setImages(
-      fecthedDataJSON.results.map((img) => {
-        return { key: img.id, url: img.urls.regular };
-      })
-    );
+
+    if (fecthedDataJSON.total === 0) {
+      setError(true);
+    } else {
+      setImages(
+        fecthedDataJSON.results.map((img) => {
+          return { key: img.id, url: img.urls.regular };
+        })
+      );
+    }
+
     setLoading(false);
   }
 
@@ -42,7 +50,12 @@ function App() {
             exact
             path="/search"
             render={(props) => (
-              <Search {...props} images={images} loading={loading} />
+              <Search
+                {...props}
+                images={images}
+                loading={loading}
+                error={error}
+              />
             )}
           />
           {/*<Route exact path="/user" component={User} />*/}
