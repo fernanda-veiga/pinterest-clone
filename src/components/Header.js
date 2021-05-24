@@ -28,6 +28,12 @@ function SearchBox(props) {
     resetInput();
   }
 
+  function callFetchFunctionOnEnter(event) {
+    if (event.key === "Enter") {
+      callFetchFunction(event);
+    }
+  }
+
   return (
     <div className="search-box-container">
       <label className="search-box">
@@ -36,6 +42,7 @@ function SearchBox(props) {
         </button>
         <input
           onChange={handleInputChange}
+          onKeyDown={callFetchFunctionOnEnter}
           className="search-input"
           type="text"
           placeholder="Search"
