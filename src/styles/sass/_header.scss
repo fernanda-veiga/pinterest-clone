@@ -1,8 +1,13 @@
 @use 'vars';
 
 .Header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
   display: flex;
   gap: 20px;
+  width: 100%;
   height: vars.$headerHeight;
   padding: 15px 25px;
 

@@ -2,6 +2,7 @@
 
 .Search {
   @include vars.flexCenter;
+  margin-top: vars.$headerHeight;
 
   .Search-image-container {
     width: min-content;
