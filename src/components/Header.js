@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/logo.png";
 import search from "../assets/search.svg";
 import user from "../assets/user.svg";
@@ -12,20 +12,13 @@ function Logo() {
 }
 
 function SearchBox(props) {
-  const [searchTerm, setSearchTerm] = useState("");
-
   function handleInputChange(event) {
-    setSearchTerm(event.target.value);
-  }
-
-  function resetInput() {
-    setSearchTerm("");
+    props.setSearchTerm(event.target.value);
   }
 
   function callFetchFunction(event) {
     event.preventDefault();
-    props.fetchImages(searchTerm);
-    resetInput();
+    props.fetchImagesOnSearch(props.searchTerm);
   }
 
   function callFetchFunctionOnEnter(event) {
@@ -66,7 +59,11 @@ function Header(props) {
   return (
     <header className="Header">
       <Logo />
-      <SearchBox fetchImages={props.fetchImages} />
+      <SearchBox
+        fetchImagesOnSearch={props.fetchImagesOnSearch}
+        searchTerm={props.searchTerm}
+        setSearchTerm={props.setSearchTerm}
+      />
       <User />
     </header>
   );
