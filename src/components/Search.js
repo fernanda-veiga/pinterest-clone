@@ -17,9 +17,9 @@ function Search(props) {
         <div className="Search-image-container">
           {props.images.map((img) => {
             return (
-              <Link to={"pin/" + img.key} key={img.key + "-link"}>
+              <Link to={"pin/" + img.id} key={img.id + "-link"}>
                 <img
-                  key={img.key + "-img"}
+                  key={img.id + "-img"}
                   className="Search-image"
                   src={img.url}
                   alt={img.alt === null ? "" : img.alt}

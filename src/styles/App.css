@@ -82,7 +82,7 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  background-color: #5851d8;
+  background-color: #6257db;
   border-radius: 50%;
 }
 .Header .user-container .user .user-icon {
@@ -164,7 +164,7 @@
   position: relative;
   width: 80px;
   height: 80px;
-  background-color: #5851d8;
+  background-color: #6257db;
   border-radius: 50%;
   animation: spin 2s linear infinite;
 }
@@ -198,6 +198,103 @@
 .loader-container .loader .loader-circle:nth-child(4) {
   right: 30%;
   bottom: 30%;
+}
+
+.Pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 80px;
+}
+.Pin .back-button {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+.Pin .back-button:hover {
+  background-color: #efefef;
+}
+.Pin .back-button .back-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(52%) sepia(2%) saturate(15%) hue-rotate(318deg) brightness(87%) contrast(81%);
+}
+.Pin .Pin-container {
+  display: flex;
+  width: 60vw;
+  height: 70vh;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px lightgray;
+  border-radius: 30px;
+}
+.Pin .Pin-container .Pin-container-left {
+  width: 50%;
+  height: 100%;
+}
+.Pin .Pin-container .Pin-container-left .Pin-image-url {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 0px 0px 30px;
+}
+.Pin .Pin-container .Pin-container-left .Pin-image-url .Pin-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 0px 0px 30px;
+  object-fit: cover;
+}
+.Pin .Pin-container .Pin-container-right {
+  width: 50%;
+  height: 100%;
+  padding: 30px;
+  font-family: "Ubuntu", sans-serif;
+}
+.Pin .Pin-container .Pin-container-right .Pin-container-right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Pin .Pin-container .Pin-container-right .Pin-container-right-top .Pin-link {
+  color: #767676;
+}
+.Pin .Pin-container .Pin-container-right .Pin-container-right-top .Pin-save-button {
+  padding: 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background-color: #6257db;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+.Pin .Pin-container .Pin-container-right .Pin-container-right-top .Pin-save-button:hover {
+  background-color: #4641be;
+}
+.Pin .Pin-container .Pin-container-right .Pin-title {
+  margin-top: 20px;
+}
+.Pin .Pin-container .Pin-container-right .Pin-creator-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.Pin .Pin-container .Pin-container-right .Pin-creator-container .Pin-creator-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.Pin .Pin-container .Pin-container-right .Pin-creator-container .Pin-creator-name {
+  font-weight: 600;
 }
 
 * {
