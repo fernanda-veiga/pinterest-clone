@@ -1,6 +1,7 @@
 import React from "react";
 import Loader from "./Loader";
 import sadFace from "../assets/sad.svg";
+import { Link } from "react-router-dom";
 
 function Search(props) {
   return (
@@ -16,12 +17,14 @@ function Search(props) {
         <div className="Search-image-container">
           {props.images.map((img) => {
             return (
-              <img
-                key={img.key}
-                className="Search-image"
-                src={img.url}
-                alt=""
-              />
+              <Link to={"pin/" + img.key} key={img.key + "-link"}>
+                <img
+                  key={img.key + "-img"}
+                  className="Search-image"
+                  src={img.url}
+                  alt={img.alt === null ? "" : img.alt}
+                />
+              </Link>
             );
           })}
         </div>
