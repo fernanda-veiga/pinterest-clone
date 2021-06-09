@@ -1,0 +1,127 @@
+@use 'vars';
+
+.Pin {
+  @include vars.flexCenter;
+
+  position: relative;
+  margin-top: vars.$headerHeight;
+
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    cursor: pointer;
+
+    background: none;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+    &:hover {
+      background-color: vars.$veryLightGray;
+    }
+
+    .back-icon {
+      width: 20px;
+      height: 20px;
+
+      filter: invert(52%) sepia(2%) saturate(15%) hue-rotate(318deg)
+        brightness(87%) contrast(81%);
+    }
+  }
+
+  .Pin-container {
+    display: flex;
+    width: 60vw;
+    height: 70vh;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px lightgray;
+
+    border-radius: 30px;
+
+    .Pin-container-left {
+      width: 50%;
+      height: 100%;
+
+      .Pin-image-url {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 30px 0px 0px 30px;
+
+        .Pin-image {
+          width: 100%;
+          height: 100%;
+
+          border-radius: 30px 0px 0px 30px;
+
+          object-fit: cover;
+        }
+      }
+    }
+
+    .Pin-container-right {
+      width: 50%;
+      height: 100%;
+      padding: 30px;
+
+      font-family: vars.$ubuntu;
+
+      .Pin-container-right-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .Pin-link {
+          color: vars.$gray;
+        }
+
+        .Pin-save-button {
+          padding: 15px;
+
+          font-family: vars.$ubuntu;
+          font-size: 1em;
+          font-weight: 600;
+          color: vars.$white;
+
+          cursor: pointer;
+
+          background-color: vars.$bluePurple;
+          border: none;
+          border-radius: 100px;
+          outline: none;
+
+          &:hover {
+            background-color: vars.$darkBluePurple;
+          }
+        }
+      }
+
+      .Pin-title {
+        margin-top: 20px;
+      }
+
+      .Pin-creator-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+
+        .Pin-creator-image {
+          width: 50px;
+          height: 50px;
+
+          border-radius: 50%;
+        }
+
+        .Pin-creator-name {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
