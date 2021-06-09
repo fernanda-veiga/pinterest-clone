@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import Search from "./Search";
+import Pin from "./Pin";
 import "../styles/App.css";
 import APIKeyPath from "../firebase";
 
@@ -209,22 +210,6 @@ function App() {
         </Switch>
       </div>
     </HashRouter>
-  );
-}
-
-function Pin(props) {
-  const images = props.images;
-  const imageId = props.id;
-  const imageIndex = images.map((img) => img.key).indexOf(imageId);
-  const clickedImage = images[imageIndex];
-
-  return (
-    <div>
-      <img
-        src={clickedImage.url}
-        alt={clickedImage.alt === null ? "" : clickedImage.alt}
-      />
-    </div>
   );
 }
 
