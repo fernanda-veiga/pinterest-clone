@@ -199,7 +199,12 @@ function App() {
               />
             )}
           />
-          <Route path={"/pin/:id" + IMG_PATH_REGEX} component={Test} />
+          <Route
+            path={"/pin/:id" + IMG_PATH_REGEX}
+            render={({ match, props }) => (
+              <Pin {...props} id={match.params.id} images={images} />
+            )}
+          />
           {/*<Route exact path="/user" component={User} />*/}
         </Switch>
       </div>
@@ -207,8 +212,20 @@ function App() {
   );
 }
 
-function Test() {
-  return <div>Hi</div>;
+function Pin(props) {
+  const images = props.images;
+  const imageId = props.id;
+  const imageIndex = images.map((img) => img.key).indexOf(imageId);
+  const clickedImage = images[imageIndex];
+
+  return (
+    <div>
+      <img
+        src={clickedImage.url}
+        alt={clickedImage.alt === null ? "" : clickedImage.alt}
+      />
+    </div>
+  );
 }
 
 export default App;
